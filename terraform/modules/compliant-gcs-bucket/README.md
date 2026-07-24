@@ -1,0 +1,3 @@
+# Compliant GCS Bucket Module
+
+This Terraform module enforces a baseline of Google Cloud Storage security and compliance controls. It supports NIST SP 800-53 SC-12 through customer-managed cryptographic key establishment, SC-13 and SC-28 through customer-managed encryption and scheduled key rotation, AC-3 through uniform bucket-level access and public access prevention, AU-11 through configurable retention policies, and CM-6 through required resource labels that are automatically applied by the module.
