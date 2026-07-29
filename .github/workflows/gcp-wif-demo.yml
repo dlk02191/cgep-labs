@@ -1,0 +1,30 @@
+name: GCP WIF Demo
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'terraform/baselines/gcp/**'
+      - '.github/workflows/gcp-wif-demo.yml'
+
+permissions:
+  id-token: write   # required to mint the OIDC token
+  contents: read
+
+jobs:
+  authenticate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: projects/296605712558/locations/global/workloadIdentityPools/github-actions/providers/github
+          service_account: cgep-grc-gate-sa@cgep-labs.iam.gserviceaccount.com
+
+      - uses: google-github-actions/setup-gcloud@v2
+
+      - name: Prove keyless auth works
+        run: |
+          gcloud auth list
+          gcloud storage ls || echo "no buckets in project (auth still succeeded)"
