@@ -1,0 +1,2 @@
+VALID: Model C:\Users\Danielle Koppel\grc-labs\cgep-labs\.trestle-work\component-definitions\compliant-s3-v1\component-definition.json passed the Validator to confirm the model passes all registered validation tests.
+VALID: Model C:\Users\Danielle Koppel\grc-labs\cgep-labs\.trestle-work\profiles\cge-p-minimum\profile.json passed the Validator to confirm the model passes all registered validation tests.
